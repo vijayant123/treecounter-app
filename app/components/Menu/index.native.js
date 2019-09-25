@@ -145,6 +145,21 @@ export default class Menu extends Component {
           ),
         0
       );
+    } else if (urlBreak.indexOf('pledge') !== -1) {
+      setTimeout(
+        () =>
+          updateRoute(
+            '/' + urlBreak[urlBreak.length - 2],
+            // '/' +
+            // urlBreak[urlBreak.length - 1],
+            navigation,
+            0,
+            {
+              slug: urlBreak[urlBreak.length - 1]
+            }
+          ),
+        0
+      );
     } else if (urlBreak[urlBreak.length - 2] === 'donate-trees') {
       this.props.selectPlantProjectAction(urlBreak[urlBreak.length - 1]);
       setTimeout(() => updateRoute('app_selectProject', navigation, 0, {}), 0);
