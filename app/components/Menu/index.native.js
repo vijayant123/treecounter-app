@@ -146,6 +146,8 @@ export default class Menu extends Component {
         0
       );
     } else if (urlBreak.indexOf('pledge') !== -1) {
+      // TODO load plant project from slug
+      // TODO load pledge event data from slug
       setTimeout(
         () =>
           updateStaticRoute('app_pledge_events', navigation, {
