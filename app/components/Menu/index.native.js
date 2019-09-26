@@ -10,7 +10,7 @@ import {
 import { LargeMenuItem } from './MenuItem.native';
 import PropTypes, { func } from 'prop-types';
 import styles from '../../styles/menu.native';
-import { updateRoute } from '../../helpers/routerHelper';
+import { updateRoute, updateStaticRoute } from '../../helpers/routerHelper';
 import * as icons from '../../assets';
 import i18n from '../../locales/i18n.js';
 import { getLocalRoute } from '../../actions/apiRouting';
@@ -148,16 +148,9 @@ export default class Menu extends Component {
     } else if (urlBreak.indexOf('pledge') !== -1) {
       setTimeout(
         () =>
-          updateRoute(
-            '/' + urlBreak[urlBreak.length - 2],
-            // '/' +
-            // urlBreak[urlBreak.length - 1],
-            navigation,
-            0,
-            {
-              slug: urlBreak[urlBreak.length - 1]
-            }
-          ),
+          updateStaticRoute('app_pledge_events', navigation, {
+            slug: urlBreak[urlBreak.length - 1]
+          }),
         0
       );
     } else if (urlBreak[urlBreak.length - 2] === 'donate-trees') {
